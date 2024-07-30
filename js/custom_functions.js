@@ -13,11 +13,9 @@ const nl2br = function (str, is_xhtml) {
 };
 
 const sepNumber = function (num, dec = 2) {
-  num
-    .toString()
-    .replaceAll(",", "")
+  return (+num.toString().replaceAll(",", ""))
+    .toFixed(dec)
     .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
-  return (+num).toFixed(dec);
 };
 
 const oneSpace = function (str) {
