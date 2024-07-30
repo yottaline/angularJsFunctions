@@ -18,6 +18,6 @@ const sepNumber = function (num, dec = 2) {
     .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 };
 
-const oneSpace = function (str) {
-  return str.replace(/\s\s+/g, " ");
-};
+const oneSpace = (str) => str.replace(/\s\s+/g, " ");
+
+const arrayColumn = (array, column) => array.map((item) => item[column]);
