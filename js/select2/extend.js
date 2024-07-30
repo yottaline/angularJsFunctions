@@ -1,18 +1,12 @@
-const suggOption = function (
-  parent, // jQuery element
-  url,
-  results, // function
-  placeholder,
-  html = false,
-  data = {},
-  lang = { lang: "en", dir: "ltr" }
-) {
+const suggOption = function (url, results, opt = {}) {
+  var data = opt.data ?? {};
+  var lang = opt.lang ?? { lang: "en", dir: "ltr" };
   var param = {
-    dropdownParent: parent ?? $(document.body),
+    dropdownParent: opt.parent ?? $(document.body),
     language: lang.lang,
     dir: lang.dir,
-    allowClear: !!placeholder,
-    placeholder: placeholder ?? "",
+    allowClear: !!opt.placeholder,
+    placeholder: opt.placeholder ?? "",
     debug: true,
     ajax: {
       url: url,
@@ -33,7 +27,7 @@ const suggOption = function (
       },
     },
   };
-  if (html)
+  if (!!opt.html)
     param = $.extend(true, param, {
       escapeMarkup: function (markup) {
         return markup;
