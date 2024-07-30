@@ -1,10 +1,9 @@
 const suggOption = function (url, results, opt = {}) {
   var data = opt.data ?? {};
-  var lang = opt.lang ?? { lang: "en", dir: "ltr" };
   var param = {
     dropdownParent: opt.parent ?? $(document.body),
-    language: lang.lang,
-    dir: lang.dir,
+    language: opt.lang ?? "en",
+    dir: opt.dir ?? "ltr",
     allowClear: !!opt.placeholder,
     placeholder: opt.placeholder ?? "",
     debug: true,
