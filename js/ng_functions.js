@@ -2,7 +2,7 @@
 
 class NgFunctions {
   static jsonParse = (str) => JSON.parse(str);
-  static replace = (str, search, replace) => str.replaceAll(search, replace);
+  static replace = (str, s, r) => str.toString().replaceAll(s, r);
   static slice = (str, start, end) => str.slice(start, end);
   static split = (str, sep = ",") => str.split(sep);
   static toFixed = (num, decimal) => num.toFixed(decimal);
