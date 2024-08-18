@@ -34,4 +34,6 @@ $.extend($.validator.messages, {
   date10dashed: "التاريخ غير صالح",
   dateGreaterThan: "التاريخ يجب أن يكون أكبر",
   dateLessThan: "التاريخ يجب أن يكون أقل",
+  ar_only: "أحرف عربية فقط",
+  ar: "أحرف عربية وأرقام فقط",
 });
