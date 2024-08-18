@@ -174,7 +174,7 @@ $.validator.addMethod(
 $.validator.addMethod(
   "ar",
   function (value, element, arg) {
-    return this.optional(element) || /^[\p{Arabic}0-9]+$/gmu.test(value);
+    return this.optional(element) || /^[\u0621-\u064A0-9 ]+$/.test(value);
   },
   "Arabic letters and digits only"
 );
@@ -182,7 +182,7 @@ $.validator.addMethod(
 $.validator.addMethod(
   "ar_only",
   function (value, element, arg) {
-    return this.optional(element) || /^[\p{Arabic}]+$/gmu.test(value);
+    return this.optional(element) || /^[\u0621-\u064A ]+$/.test(value);
   },
   "Arabic letters only"
 );
