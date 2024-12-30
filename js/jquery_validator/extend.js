@@ -1,8 +1,12 @@
 $.validator.addMethod(
   "validUrl",
-  function (value, element) {
-    var url = $.validator.methods.url.bind(this);
-    return url(value, element) || url("http://" + value, element);
+  function (value, element, arg) {
+    return (
+      this.optional(element) ||
+      /^(https?:\/\/)?(www\.)?[a-zA-Z0-9\-\_]+\.[a-zA-Z]{2,}((\/|[a-zA-Z0-9\-\@\,\_]+|\/)+)?(\?[a-zA-Z0-9\-\+\@\_]+(\=)?[a-zA-Z0-9\-\+\@\_]+)?((\&[a-zA-Z0-9\-\+\@\_]+(\=)?[a-zA-Z0-9\-\+\@\_]+)?)+$/.test(
+        value
+      )
+    );
   },
   "Please enter a valid URL"
 );
