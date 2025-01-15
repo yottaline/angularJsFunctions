@@ -31,6 +31,7 @@ $.extend($.validator.messages, {
   device_pnc: "القيمة غير صالحة",
   tel: "الرقم غير صالح",
   sa_mob: "الرقم غير صالح",
+  eg_mob: "الرقم غير صالح",
   date10dashed: "التاريخ غير صالح",
   dateGreaterThan: "التاريخ يجب أن يكون أكبر",
   dateLessThan: "التاريخ يجب أن يكون أقل",

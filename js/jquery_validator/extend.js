@@ -116,7 +116,15 @@ $.validator.addMethod(
 $.validator.addMethod(
   "sa_mob",
   function (value, element, arg) {
-    return this.optional(element) || /^(05(0|[3-9])[0-9]{7})$/.test(value);
+    return this.optional(element) || /^05(0|[3-9])[0-9]{7}$/.test(value);
+  },
+  "Enter a valid tel number"
+);
+
+$.validator.addMethod(
+  "eg_mob",
+  function (value, element, arg) {
+    return this.optional(element) || /^01(0|1|2|5)[0-9]{8}$/.test(value);
   },
   "Enter a valid tel number"
 );
